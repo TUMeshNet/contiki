@@ -89,7 +89,7 @@ static struct etimer et;
 static struct rtimer rt;
 static uint16_t counter;
 /*---------------------------------------------------------------------------*/
-PROCESS(openmote_demo_process, "cc2538 demo process");
+PROCESS(openmote_demo_process, "OpenMote-CC2538 demo process");
 AUTOSTART_PROCESSES(&openmote_demo_process);
 /*---------------------------------------------------------------------------*/
 static void

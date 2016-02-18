@@ -49,6 +49,7 @@
 
 #include "contiki.h"
 #include "dev/sht21.h"
+#include "sys/etimer.h"
 
 #include <stdio.h>
 
@@ -64,13 +65,18 @@ PROCESS_THREAD(test_sht21_process, ev, data)
   PROCESS_BEGIN();
   sht21_init();
 
-  for (etimer_set(&et, CLOCK_SECOND);; etimer_reset(&et)) {
-    PROCESS_YIELD();
-    temperature = sht21_read_temperature();
-    printf("Temperature:   %u degrees Celsius\n", temperature);
-    humidity = sht21_read_humidity();
-    printf("Rel. humidity: %u%%\n", humidity);
-  }
+  while(1) {
+    etimer_set(&et, CLOCK_SECOND);
 
+    PROCESS_YIELD();
+
+    if (ev == PROCESS_EVENT_TIMER) {
+      temperature = sht21_read_temperature();
+      printf("Temperature:   %u degrees Celsius\n", temperature);
+      humidity = sht21_read_humidity();
+      printf("Rel. humidity: %u%%\n", humidity);
+    }
+  }
+  
   PROCESS_END();
 }

@@ -63,14 +63,19 @@ PROCESS_THREAD(test_adxl346_process, ev, data)
   PROCESS_BEGIN();
   adxl346_init();
 
-  for (etimer_set(&et, CLOCK_SECOND);; etimer_reset(&et)) {
+  while(1) {
+    etimer_set(&et, CLOCK_SECOND);
+
     PROCESS_YIELD();
-    acceleration = adxl346_read_x();
-    printf("X Acceleration: %u\n", acceleration);
-    acceleration = adxl346_read_y();
-    printf("Y Acceleration: %u\n", acceleration);
-    acceleration = adxl346_read_z();
-    printf("Z Acceleration: %u\n", acceleration);
+
+    if (ev == PROCESS_EVENT_TIMER) {
+      acceleration = adxl346_read_x();
+      printf("X Acceleration: %u\n", acceleration);
+      acceleration = adxl346_read_y();
+      printf("Y Acceleration: %u\n", acceleration);
+      acceleration = adxl346_read_z();
+      printf("Z Acceleration: %u\n", acceleration);
+    }
   }
 
   PROCESS_END();

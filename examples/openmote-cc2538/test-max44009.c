@@ -63,10 +63,15 @@ PROCESS_THREAD(test_max44009_process, ev, data)
   PROCESS_BEGIN();
   max44009_init();
 
-  for (etimer_set(&et, CLOCK_SECOND);; etimer_reset(&et)) {
+  while(1) {
+    etimer_set(&et, CLOCK_SECOND);
+
     PROCESS_YIELD();
-    light = max44009_read_light();
-    printf("Light: %u\n", light);
+
+    if (ev == PROCESS_EVENT_TIMER) {
+      light = max44009_read_light();
+      printf("Light: %u\n", light);
+    }
   }
 
   PROCESS_END();
