@@ -152,6 +152,9 @@ adxl346_init(void)
 {
   uint8_t config[2];
 
+  i2c_init(I2C_SDA_PORT, I2C_SDA_PIN, I2C_SCL_PORT, I2C_SCL_PIN,
+           I2C_SCL_NORMAL_BUS_SPEED);
+
   config[0] = ADXL346_BW_RATE_ADDR;
   config[1] = (ADXL346_BW_RATE_RATE(11));
   i2c_burst_send(ADXL346_ADDRESS, config, sizeof(config));

@@ -49,6 +49,7 @@
 
 #include "contiki.h"
 #include "dev/sht21.h"
+#include "dev/leds.h"
 #include "sys/etimer.h"
 
 #include <stdio.h>
@@ -59,11 +60,16 @@ AUTOSTART_PROCESSES(&test_sht21_process);
 PROCESS_THREAD(test_sht21_process, ev, data)
 {
   static struct etimer et;
-  static unsigned temperature;
-  static unsigned humidity;
+  static unsigned raw;
+  static float temperature;
+  static float humidity;
 
   PROCESS_BEGIN();
   sht21_init();
+
+  if (!sht21_is_present()) {
+    leds_on(LEDS_ORANGE);
+  }
 
   while(1) {
     etimer_set(&et, CLOCK_SECOND);
@@ -71,10 +77,14 @@ PROCESS_THREAD(test_sht21_process, ev, data)
     PROCESS_YIELD();
 
     if (ev == PROCESS_EVENT_TIMER) {
-      temperature = sht21_read_temperature();
-      printf("Temperature:   %u degrees Celsius\n", temperature);
-      humidity = sht21_read_humidity();
-      printf("Rel. humidity: %u%%\n", humidity);
+      leds_on(LEDS_YELLOW);
+      raw = sht21_read_temperature();
+      temperature = sht21_convert_temperature(raw);
+      printf("Temperature:   %u degrees Celsius\n", (unsigned int) temperature);
+      raw = sht21_read_humidity();
+      humidity = sht21_convert_humidity(raw);
+      printf("Rel. humidity: %u%%\n",  (unsigned int) humidity);
+      leds_off(LEDS_YELLOW	);
     }
   }
   

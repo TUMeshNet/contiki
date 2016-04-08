@@ -49,7 +49,7 @@
 
 #include "contiki.h"
 #include "dev/max44009.h"
-
+#include "dev/leds.h"
 #include <stdio.h>
 
 PROCESS(test_max44009_process, "MAX44009 test");
@@ -58,10 +58,15 @@ AUTOSTART_PROCESSES(&test_max44009_process);
 PROCESS_THREAD(test_max44009_process, ev, data)
 {
   static struct etimer et;
-  static unsigned light;
+  static unsigned raw;
+  static float light;
 
   PROCESS_BEGIN();
   max44009_init();
+
+if (!max44009_is_present()) {
+    leds_on(LEDS_ORANGE);
+  }
 
   while(1) {
     etimer_set(&et, CLOCK_SECOND);
@@ -69,8 +74,11 @@ PROCESS_THREAD(test_max44009_process, ev, data)
     PROCESS_YIELD();
 
     if (ev == PROCESS_EVENT_TIMER) {
-      light = max44009_read_light();
-      printf("Light: %u\n", light);
+      leds_on(LEDS_YELLOW);
+      raw = max44009_read_light();
+      light = max44009_convert_light(raw);
+      printf("Light: %u\n", (unsigned int) light);
+      leds_off(LEDS_YELLOW);
     }
   }
 

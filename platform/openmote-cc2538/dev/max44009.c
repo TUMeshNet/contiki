@@ -108,6 +108,9 @@ max44009_init(void)
   max44009_value[3] = (0x00);
   max44009_value[4] = (0xFF);
 
+  i2c_init(I2C_SDA_PORT, I2C_SDA_PIN, I2C_SCL_PORT, I2C_SCL_PIN,
+           I2C_SCL_NORMAL_BUS_SPEED);
+
   for(i = 0; i < sizeof(max44009_address); i++) {
     max44009_data[0] = max44009_value[i];
     max44009_data[1] = max44009_data[i];

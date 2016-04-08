@@ -63,6 +63,10 @@ PROCESS_THREAD(test_adxl346_process, ev, data)
   PROCESS_BEGIN();
   adxl346_init();
 
+  if (!adxl346_is_present()) {
+    leds_on(LEDS_ORANGE);
+  }
+
   while(1) {
     etimer_set(&et, CLOCK_SECOND);
 

@@ -90,6 +90,9 @@ sht21_init(void)
 {
   uint8_t config[2];
 
+  i2c_init(I2C_SDA_PORT, I2C_SDA_PIN, I2C_SCL_PORT, I2C_SCL_PIN,
+           I2C_SCL_NORMAL_BUS_SPEED);
+
   /* Setup the configuration vector, the first position holds address */
   /* and the second position holds the actual configuration */
   config[0] = SHT21_USER_REG_WRITE;
@@ -133,7 +136,9 @@ sht21_is_present(void)
   /* Clear the reserved bits according to the datasheet (pag. 9, tab. 8) */
   is_present &= ~SHT21_USER_REG_RESERVED_BITS;
 
-  return is_present == SHT21_DEFAULT_CONFIG;
+  is_present = ((is_present == SHT21_USER_CONFIG) || (is_present == SHT21_DEFAULT_CONFIG));
+
+  return is_present;
 }
 /*---------------------------------------------------------------------------*/
 /**
@@ -163,7 +168,7 @@ sht21_convert_temperature(uint16_t temperature)
   float result;
 
   result = -46.85;
-  result += 175.72 * temperature / 65536;
+  result += 175.72 * (float) temperature / 65536.0;
 
   return result;
 }
@@ -195,7 +200,7 @@ sht21_convert_humidity(uint16_t humidity)
   float result;
 
   result = -6.0;
-  result += 125.0 * humidity / 65536;
+  result += 125.0 * (float) humidity / 65536.0;
 
   return result;
 }
