@@ -96,7 +96,7 @@ static void
 broadcast_recv(struct broadcast_conn *c, const linkaddr_t *from)
 {
   leds_toggle(LEDS_RF_RX);
-  printf("Received %u bytes: '0x%04x'\n", packetbuf_datalen(),
+  printf("Received %u bytes: '0x%04x'\n\r", packetbuf_datalen(),
          *(uint16_t *)packetbuf_dataptr());
 }
 /*---------------------------------------------------------------------------*/
@@ -126,7 +126,7 @@ PROCESS_THREAD(openmote_demo_process, ev, data)
 
     if(ev == PROCESS_EVENT_TIMER) {
       leds_on(LEDS_PERIODIC);
-      printf("Counter = 0x%08x\n", counter);
+      printf("Counter = 0x%08x\r\n", counter);
 
       etimer_set(&et, CLOCK_SECOND);
       rtimer_set(&rt, RTIMER_NOW() + LEDS_OFF_HYSTERISIS, 1,
