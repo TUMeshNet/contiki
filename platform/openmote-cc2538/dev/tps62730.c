@@ -30,7 +30,6 @@
  *
  */
 <<<<<<< HEAD
-<<<<<<< HEAD
 
 /**
  * \addtogroup platform
@@ -41,8 +40,6 @@
  * \file
  * Driver for the TPS62730 voltage regulator on the OpenMote-CC2538.
 =======
-=======
->>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
 /**
  * \addtogroup openmote-tps62730
@@ -55,19 +52,13 @@
  *
  * \file
  * Driver for the TPS62730 voltage regulator
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
  *
  * \author
  * Pere Tuset <peretuset@openmote.com>
  */
 <<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> OpenMote/master
 =======
 >>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
@@ -92,13 +83,10 @@ gpio_reset(int port, int bit)
 }
 /*---------------------------------------------------------------------------*/
 <<<<<<< HEAD
-<<<<<<< HEAD
 /**
  * Initializes the TPS62730 voltage regulator
  * By default it is in bypass mode, Vout = Vin, Iq < 1 uA
  */
-=======
->>>>>>> OpenMote/master
 =======
 >>>>>>> OpenMote/master
 void
@@ -111,12 +99,9 @@ tps62730_init(void)
 }
 /*---------------------------------------------------------------------------*/
 <<<<<<< HEAD
-<<<<<<< HEAD
 /**
  * Enables the TPS62730, Vout = 2.2V, Iq = 30 uA
  */
-=======
->>>>>>> OpenMote/master
 =======
 >>>>>>> OpenMote/master
 void
@@ -126,12 +111,9 @@ tps62730_on(void)
 }
 /*---------------------------------------------------------------------------*/
 <<<<<<< HEAD
-<<<<<<< HEAD
 /**
  * Disables the TPS62730, Vout = Vin, Iq < 1 uA
  */
-=======
->>>>>>> OpenMote/master
 =======
 >>>>>>> OpenMote/master
 void
@@ -141,16 +123,10 @@ tps62730_bypass(void)
 }
 /*---------------------------------------------------------------------------*/
 <<<<<<< HEAD
-<<<<<<< HEAD
 /** @} */
 =======
-=======
->>>>>>> OpenMote/master
 /**
  * @}
  * @}
  */
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master

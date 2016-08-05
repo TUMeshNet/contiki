@@ -30,7 +30,6 @@
  *
  */
 <<<<<<< HEAD
-<<<<<<< HEAD
 
 /**
  * \addtogroup platform
@@ -41,8 +40,6 @@
  * \file
  * Driver for the SHT21 temperature and humidity sensor in OpenMote-CC2538.
 =======
-=======
->>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
 /**
  * \addtogroup openmote-sht21-sensor
@@ -50,15 +47,11 @@
  *
  * \file
  * Driver for the SHT21 temperature and relative humidity sensor
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
  *
  * \author
  * Pere Tuset <peretuset@openmote.com>
  */
-<<<<<<< HEAD
 <<<<<<< HEAD
 
 /*---------------------------------------------------------------------------*/
@@ -68,8 +61,6 @@
 #define SHT21_ADDRESS                   (0x40)
 
 =======
-=======
->>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
 #include "dev/i2c.h"
 #include "dev/sht21.h"
@@ -92,19 +83,13 @@
  * \name SHT21 register addresses and values
  * @{
  */
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
 #define SHT21_USER_REG_READ             (0xE7)
 #define SHT21_USER_REG_WRITE            (0xE6)
 #define SHT21_USER_REG_RESERVED_BITS    (0x38)
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
-=======
->>>>>>> OpenMote/master
 #define SHT21_TEMPERATURE_HM_CMD        (0xE3)
 #define SHT21_HUMIDITY_HM_CMD           (0xE5)
 #define SHT21_TEMPERATURE_NHM_CMD       (0xF3)
@@ -113,9 +98,6 @@
 
 #define SHT21_STATUS_MASK               (0xFC)
 
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
 #define SHT21_RESOLUTION_12b_14b        ((0 << 7) | (0 << 0))
 #define SHT21_RESOLUTION_8b_12b         ((0 << 7) | (1 << 0))
@@ -128,7 +110,6 @@
 #define SHT21_OTP_RELOAD_ENABLE         (0 << 1)
 #define SHT21_OTP_RELOAD_DISABLE        (1 << 1)
 <<<<<<< HEAD
-<<<<<<< HEAD
 
 #define SHT21_TEMPERATURE_HM_CMD        (0xE3)
 #define SHT21_HUMIDITY_HM_CMD           (0xE5)
@@ -139,24 +120,18 @@
 #define SHT21_STATUS_MASK               ( 0xFC )
 
 =======
-=======
->>>>>>> OpenMote/master
 /** @} */
 /*---------------------------------------------------------------------------*/
 /**
  * \name SHT21 configuration values
  * @{
  */
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
 #define SHT21_DEFAULT_CONFIG            (SHT21_RESOLUTION_12b_14b | \
                                          SHT21_ONCHIP_HEATER_DISABLE | \
                                          SHT21_BATTERY_ABOVE_2V25 | \
                                          SHT21_OTP_RELOAD_DISABLE)
 
-<<<<<<< HEAD
 <<<<<<< HEAD
 #define SHT21_USER_CONFIG               (SHT21_RESOLUTION_8b_12b | \
                                          SHT21_ONCHIP_HEATER_DISABLE | \
@@ -168,8 +143,6 @@
  */
 void
 =======
-=======
->>>>>>> OpenMote/master
 #define SHT21_USER_CONFIG               (SHT21_RESOLUTION_12b_14b | \
                                          SHT21_ONCHIP_HEATER_DISABLE | \
                                          SHT21_BATTERY_ABOVE_2V25 | \
@@ -179,21 +152,15 @@ void
 static uint8_t enabled;
 /*---------------------------------------------------------------------------*/
 static void
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
 sht21_init(void)
 {
   uint8_t config[2];
 
 <<<<<<< HEAD
-<<<<<<< HEAD
   i2c_init(I2C_SDA_PORT, I2C_SDA_PIN, I2C_SCL_PORT, I2C_SCL_PIN,
            I2C_SCL_NORMAL_BUS_SPEED);
 
-=======
->>>>>>> OpenMote/master
 =======
 >>>>>>> OpenMote/master
   /* Setup the configuration vector, the first position holds address */
@@ -215,14 +182,10 @@ sht21_init(void)
 }
 /*---------------------------------------------------------------------------*/
 <<<<<<< HEAD
-<<<<<<< HEAD
 /**
  *
  */
 void
-=======
-static void
->>>>>>> OpenMote/master
 =======
 static void
 >>>>>>> OpenMote/master
@@ -233,7 +196,6 @@ sht21_reset(void)
 }
 /*---------------------------------------------------------------------------*/
 <<<<<<< HEAD
-<<<<<<< HEAD
 /**
  *
  */
@@ -241,39 +203,27 @@ uint8_t
 sht21_is_present(void)
 {
 =======
-=======
->>>>>>> OpenMote/master
 static uint8_t
 sht21_is_present(void)
 {
   uint8_t status;
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
   uint8_t is_present;
 
   /* Read the current configuration according to the datasheet (pag. 9, fig. 18) */
   i2c_single_send(SHT21_ADDRESS, SHT21_USER_REG_READ);
 <<<<<<< HEAD
-<<<<<<< HEAD
   i2c_single_receive(SHT21_ADDRESS, &is_present);
 =======
-=======
->>>>>>> OpenMote/master
   status = i2c_single_receive(SHT21_ADDRESS, &is_present);
   if(status != I2C_MASTER_ERR_NONE) {
     return 0;
   }
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
 
   /* Clear the reserved bits according to the datasheet (pag. 9, tab. 8) */
   is_present &= ~SHT21_USER_REG_RESERVED_BITS;
 
-<<<<<<< HEAD
 <<<<<<< HEAD
   is_present = ((is_present == SHT21_USER_CONFIG) || (is_present == SHT21_DEFAULT_CONFIG));
 
@@ -285,15 +235,10 @@ sht21_is_present(void)
  */
 uint16_t
 =======
-=======
->>>>>>> OpenMote/master
   return (is_present == SHT21_USER_CONFIG) || (is_present == SHT21_DEFAULT_CONFIG);
 }
 /*---------------------------------------------------------------------------*/
 static uint32_t
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
 sht21_read_temperature(void)
 {
@@ -305,11 +250,7 @@ sht21_read_temperature(void)
   i2c_burst_receive(SHT21_ADDRESS, sht21_temperature, sizeof(sht21_temperature));
 
 <<<<<<< HEAD
-<<<<<<< HEAD
   temperature = (sht21_temperature[0] << 8) | (sht21_temperature[1] & SHT21_STATUS_MASK);
-=======
-  temperature = (sht21_temperature[0] << 8) | ((sht21_temperature[1] & SHT21_STATUS_MASK));
->>>>>>> OpenMote/master
 =======
   temperature = (sht21_temperature[0] << 8) | ((sht21_temperature[1] & SHT21_STATUS_MASK));
 >>>>>>> OpenMote/master
@@ -317,7 +258,6 @@ sht21_read_temperature(void)
   return temperature;
 }
 /*---------------------------------------------------------------------------*/
-<<<<<<< HEAD
 <<<<<<< HEAD
 /**
  *
@@ -330,8 +270,6 @@ sht21_convert_temperature(uint16_t temperature)
   result = -46.85;
   result += 175.72 * (float) temperature / 65536.0;
 =======
-=======
->>>>>>> OpenMote/master
 static int16_t
 sht21_convert_temperature(uint32_t temperature)
 {
@@ -340,23 +278,16 @@ sht21_convert_temperature(uint32_t temperature)
   temperature *= 17572;
   temperature = temperature >> 16;
   result = (int16_t)temperature - 4685;
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
 
   return result;
 }
 /*---------------------------------------------------------------------------*/
 <<<<<<< HEAD
-<<<<<<< HEAD
 /**
  *
  */
 uint16_t
-=======
-static uint32_t
->>>>>>> OpenMote/master
 =======
 static uint32_t
 >>>>>>> OpenMote/master
@@ -370,11 +301,7 @@ sht21_read_humidity(void)
   i2c_burst_receive(SHT21_ADDRESS, sht21_humidity, sizeof(sht21_humidity));
 
 <<<<<<< HEAD
-<<<<<<< HEAD
   humidity = (sht21_humidity[0] << 8) | (sht21_humidity[1] & SHT21_STATUS_MASK);
-=======
-  humidity = (sht21_humidity[0] << 8) | ((sht21_humidity[1] & SHT21_STATUS_MASK));
->>>>>>> OpenMote/master
 =======
   humidity = (sht21_humidity[0] << 8) | ((sht21_humidity[1] & SHT21_STATUS_MASK));
 >>>>>>> OpenMote/master
@@ -382,7 +309,6 @@ sht21_read_humidity(void)
   return humidity;
 }
 /*---------------------------------------------------------------------------*/
-<<<<<<< HEAD
 <<<<<<< HEAD
 /**
  *
@@ -395,8 +321,6 @@ sht21_convert_humidity(uint16_t humidity)
   result = -6.0;
   result += 125.0 * (float) humidity / 65536.0;
 =======
-=======
->>>>>>> OpenMote/master
 static int16_t
 sht21_convert_humidity(uint32_t humidity)
 {
@@ -406,19 +330,13 @@ sht21_convert_humidity(uint32_t humidity)
   humidity = humidity >> 16;
   result = (int16_t)humidity - 600;
   result = (result > 10000) ? 10000 : result;
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
 
   return result;
 }
 /*---------------------------------------------------------------------------*/
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
-=======
->>>>>>> OpenMote/master
 static int
 status(int type)
 {
@@ -483,8 +401,5 @@ configure(int type, int value)
 /*---------------------------------------------------------------------------*/
 SENSORS_SENSOR(sht21, SHT21_SENSOR, value, configure, status);
 /*---------------------------------------------------------------------------*/
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
 /** @} */

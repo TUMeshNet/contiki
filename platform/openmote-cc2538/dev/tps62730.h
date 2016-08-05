@@ -30,7 +30,6 @@
  *
  */
 <<<<<<< HEAD
-<<<<<<< HEAD
 
 /**
  * \addtogroup platform
@@ -41,8 +40,6 @@
  * \file
  * Header for the TPS62730 voltage regulator on the OpenMote-CC2538.
 =======
-=======
->>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
 /**
  * \addtogroup openmote-cc2538
@@ -57,15 +54,11 @@
  *
  * \file
  * Driver for the TPS62730 voltage regulator
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
  *
  * \author
  * Pere Tuset <peretuset@openmote.com>
  */
-<<<<<<< HEAD
 <<<<<<< HEAD
 
 #ifndef TPS62730_H_
@@ -78,8 +71,6 @@ void tps62730_bypass(void);
 #endif /* TPS62730_H_ */
 /** @} */
 =======
-=======
->>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
 #ifndef TPS62730_H_
 #define TPS62730_H_
@@ -105,7 +96,4 @@ void tps62730_bypass(void);
  * @}
  * @}
  */
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master

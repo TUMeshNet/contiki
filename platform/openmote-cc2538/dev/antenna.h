@@ -28,7 +28,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  *
 <<<<<<< HEAD
-<<<<<<< HEAD
  */
 
 /**
@@ -51,8 +50,6 @@ void antenna_external(void);
 #endif /* ANTENNA_H_ */
 /** @} */
 =======
-=======
->>>>>>> OpenMote/master
  * This file is part of the Contiki operating system.
  *
  */
@@ -93,7 +90,4 @@ void antenna_external(void);
  * @}
  * @}
  */
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master

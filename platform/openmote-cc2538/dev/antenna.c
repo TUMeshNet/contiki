@@ -28,7 +28,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  *
 <<<<<<< HEAD
-<<<<<<< HEAD
  */
 
 /**
@@ -42,8 +41,6 @@
  */
 
 =======
-=======
->>>>>>> OpenMote/master
  * This file is part of the Contiki operating system.
  *
  */
@@ -60,16 +57,12 @@
  * \file
  * Driver implementation for the OpenMote-CC2538 antenna switch
  */
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
 #include "contiki-conf.h"
 #include "dev/gpio.h"
 #include "dev/antenna.h"
 /*---------------------------------------------------------------------------*/
-<<<<<<< HEAD
 <<<<<<< HEAD
 #define BSP_RADIO_BASE              (GPIO_D_BASE)
 #define BSP_RADIO_INT               (1 << 5)
@@ -93,15 +86,10 @@ gpio_reset(int port, int bit)
  * EXT is the external antenna (connector) configured through ANT2_SEL (V2)
  */
 =======
-=======
->>>>>>> OpenMote/master
 #define BSP_RADIO_BASE              GPIO_PORT_TO_BASE(GPIO_D_NUM)
 #define BSP_RADIO_INT               GPIO_PIN_MASK(5)
 #define BSP_RADIO_EXT               GPIO_PIN_MASK(4)
 /*---------------------------------------------------------------------------*/
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
 void
 antenna_init(void)
@@ -114,7 +102,6 @@ antenna_init(void)
   antenna_external();
 }
 /*---------------------------------------------------------------------------*/
-<<<<<<< HEAD
 <<<<<<< HEAD
 /**
  * Select the external (connector) antenna
@@ -138,8 +125,6 @@ antenna_internal(void)
 /*---------------------------------------------------------------------------*/
 /** @} */
 =======
-=======
->>>>>>> OpenMote/master
 void
 antenna_external(void)
 {
@@ -158,7 +143,4 @@ antenna_internal(void)
  * @}
  * @}
  */
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master

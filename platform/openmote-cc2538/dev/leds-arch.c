@@ -11,10 +11,7 @@
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
 <<<<<<< HEAD
-<<<<<<< HEAD
  *
-=======
->>>>>>> OpenMote/master
 =======
 >>>>>>> OpenMote/master
  * 3. Neither the name of the copyright holder nor the names of its
@@ -34,7 +31,6 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
  * OF THE POSSIBILITY OF SUCH DAMAGE.
 <<<<<<< HEAD
-<<<<<<< HEAD
  */
 
 /**
@@ -49,8 +45,6 @@
  */
 
 =======
-=======
->>>>>>> OpenMote/master
  *
  * This file is part of the Contiki operating system.
  *
@@ -66,9 +60,6 @@
  * \file
  * LED driver implementation for the OpenMote-CC2538 platform
  */
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
 #include "contiki.h"
@@ -97,16 +88,10 @@ leds_arch_set(unsigned char leds)
 }
 /*---------------------------------------------------------------------------*/
 <<<<<<< HEAD
-<<<<<<< HEAD
 /** @} */
 =======
-=======
->>>>>>> OpenMote/master
 /**
  * @}
  * @}
  */
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master

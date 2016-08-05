@@ -30,7 +30,6 @@
  *
  */
 <<<<<<< HEAD
-<<<<<<< HEAD
 
 /**
  * \addtogroup platform
@@ -41,8 +40,6 @@
  * \file
  * Driver for the ADXL346 acceleration sensor in OpenMote-CC2538.
 =======
-=======
->>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
 /**
  * \addtogroup openmote-adxl346-sensor
@@ -50,15 +47,11 @@
  *
  * \file
  * Driver for the ADXL346 acceleration sensor
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
  *
  * \author
  * Pere Tuset <peretuset@openmote.com>
  */
-<<<<<<< HEAD
 <<<<<<< HEAD
 
 /*---------------------------------------------------------------------------*/
@@ -71,8 +64,6 @@
 
 /* REGISTER ADDRESSES */
 =======
-=======
->>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
 #include "dev/i2c.h"
 #include "dev/adxl346.h"
@@ -97,9 +88,6 @@
  * \name ADXL346 register addresses
  * @{
  */
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
 #define ADXL346_DEVID_ADDR                  (0x00)
 #define ADXL346_THRES_TAP_ADDR              (0x1D)
@@ -135,21 +123,15 @@
 #define ADXL346_ORIENT_CONF_ADDR            (0x3B)
 #define ADXL346_ORIENT_ADDR                 (0x3C)
 <<<<<<< HEAD
-<<<<<<< HEAD
 
 /* INT_ENABLE/INT_MAP/INT_SOURCE */
 =======
-=======
->>>>>>> OpenMote/master
 /** @} */
 /* -------------------------------------------------------------------------- */
 /**
  * \name ADXL346 register values
  * @{
  */
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
 #define ADXL346_INT_ENABLE_DATA_READY      (1 << 7)
 #define ADXL346_INT_ENABLE_SINGLE_TAP      (1 << 6)
@@ -161,10 +143,7 @@
 #define ADXL346_INT_ENABLE_OVERRUN         (1 << 0)
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 /* ACT_INACT_CONTROL */
-=======
->>>>>>> OpenMote/master
 =======
 >>>>>>> OpenMote/master
 #define ADXL346_ACT_INACT_CTL_ACT_ACDC     (1 << 7)
@@ -177,10 +156,7 @@
 #define ADXL346_ACT_INACT_CTL_INACT_Z_EN   (1 << 0)
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 /* TAP_AXES */
-=======
->>>>>>> OpenMote/master
 =======
 >>>>>>> OpenMote/master
 #define ADXL346_TAP_AXES_SUPPRESS           (1 << 3)
@@ -189,10 +165,7 @@
 #define ADXL346_TAP_AXES_TAP_Z_EN           (1 << 0)
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 /* ACT_TAP_STATUS */
-=======
->>>>>>> OpenMote/master
 =======
 >>>>>>> OpenMote/master
 #define ADXL346_ACT_TAP_STATUS_ACT_X_SRC    (1 << 6)
@@ -204,17 +177,11 @@
 #define ADXL346_ACT_TAP_STATUS_TAP_Z_SRC    (1 << 0)
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 /* BW_RATE */
 #define ADXL346_BW_RATE_POWER               (1 << 4)
 #define ADXL346_BW_RATE_RATE(x)             ((x) & 0x0F)
 
 /* POWER CONTROL */
-=======
-#define ADXL346_BW_RATE_POWER               (1 << 4)
-#define ADXL346_BW_RATE_RATE(x)             ((x) & 0x0F)
-
->>>>>>> OpenMote/master
 =======
 #define ADXL346_BW_RATE_POWER               (1 << 4)
 #define ADXL346_BW_RATE_RATE(x)             ((x) & 0x0F)
@@ -227,10 +194,7 @@
 #define ADXL346_POWER_CTL_WAKEUP(x)         ((x) & 0x03)
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 /* DATA_FORMAT */
-=======
->>>>>>> OpenMote/master
 =======
 >>>>>>> OpenMote/master
 #define ADXL346_DATA_FORMAT_SELF_TEST       (1 << 7)
@@ -244,15 +208,12 @@
 #define ADXL346_DATA_FORMAT_RANGE_PM_8g     (2)
 #define ADXL346_DATA_FORMAT_RANGE_PM_16g    (3)
 <<<<<<< HEAD
-<<<<<<< HEAD
 /*---------------------------------------------------------------------------*/
 /**
  *
  */
 void
 =======
-=======
->>>>>>> OpenMote/master
 
 #define ADXL346_USER_CONFIGURATION          (ADXL346_DATA_FORMAT_RANGE_PM_2g)
 
@@ -261,15 +222,11 @@ void
 static uint8_t enabled;
 /*---------------------------------------------------------------------------*/
 static void
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
 adxl346_init(void)
 {
   uint8_t config[2];
 
-<<<<<<< HEAD
 <<<<<<< HEAD
   i2c_init(I2C_SDA_PORT, I2C_SDA_PIN, I2C_SCL_PORT, I2C_SCL_PIN,
            I2C_SCL_NORMAL_BUS_SPEED);
@@ -283,17 +240,12 @@ adxl346_init(void)
                ADXL346_DATA_FORMAT_FULL_RES |
                ADXL346_DATA_FORMAT_RANGE_PM_16g);
 =======
-=======
->>>>>>> OpenMote/master
   config[0] = ADXL346_BW_RATE_ADDR;
   config[1] = (ADXL346_BW_RATE_RATE(6));
   i2c_burst_send(ADXL346_ADDRESS, config, sizeof(config));
 
   config[0] = ADXL346_DATA_FORMAT_ADDR;
   config[1] = (ADXL346_USER_CONFIGURATION);
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
   i2c_burst_send(ADXL346_ADDRESS, config, sizeof(config));
 
@@ -302,7 +254,6 @@ adxl346_init(void)
   i2c_burst_send(ADXL346_ADDRESS, config, sizeof(config));
 }
 /*---------------------------------------------------------------------------*/
-<<<<<<< HEAD
 <<<<<<< HEAD
 /**
  *
@@ -319,9 +270,6 @@ uint8_t
 =======
 static uint8_t
 >>>>>>> OpenMote/master
-=======
-static uint8_t
->>>>>>> OpenMote/master
 adxl346_is_present(void)
 {
   uint8_t is_present;
@@ -332,7 +280,6 @@ adxl346_is_present(void)
   return is_present == ADXL346_DEVID_VALUE;
 }
 /*---------------------------------------------------------------------------*/
-<<<<<<< HEAD
 <<<<<<< HEAD
 /**
  *
@@ -392,8 +339,6 @@ adxl346_read_z(void)
 }
 /*---------------------------------------------------------------------------*/
 =======
-=======
->>>>>>> OpenMote/master
 static int16_t
 adxl346_read_accel(uint8_t addr1, uint8_t addr2)
 {
@@ -540,8 +485,5 @@ configure(int type, int value)
 /*---------------------------------------------------------------------------*/
 SENSORS_SENSOR(adxl346, ADXL346_SENSOR, value, configure, status);
 /*---------------------------------------------------------------------------*/
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
 /** @} */

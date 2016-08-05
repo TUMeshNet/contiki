@@ -27,12 +27,6 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
  * OF THE POSSIBILITY OF SUCH DAMAGE.
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
- *
- * This file is part of the Contiki operating system.
- *
->>>>>>> OpenMote/master
 =======
  *
  * This file is part of the Contiki operating system.
@@ -47,10 +41,7 @@
  * \file
  *  Board-initialisation for the OpenMote-CC2538 platform
 <<<<<<< HEAD
-<<<<<<< HEAD
  *
-=======
->>>>>>> OpenMote/master
 =======
 >>>>>>> OpenMote/master
  */
@@ -77,9 +68,6 @@ board_init()
  * @}
  */
 <<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> OpenMote/master
 =======
 >>>>>>> OpenMote/master

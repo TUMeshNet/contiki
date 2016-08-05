@@ -1,10 +1,6 @@
 /*
 <<<<<<< HEAD
-<<<<<<< HEAD
  * Copyright (c) 2012, Texas Instruments Incorporated - http://www.ti.com/
-=======
- * Copyright (c) 2014, Texas Instruments Incorporated - http://www.ti.com/
->>>>>>> OpenMote/master
 =======
  * Copyright (c) 2014, Texas Instruments Incorporated - http://www.ti.com/
 >>>>>>> OpenMote/master
@@ -19,10 +15,7 @@
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
 <<<<<<< HEAD
-<<<<<<< HEAD
  *
-=======
->>>>>>> OpenMote/master
 =======
 >>>>>>> OpenMote/master
  * 3. Neither the name of the copyright holder nor the names of its
@@ -42,7 +35,6 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
  * OF THE POSSIBILITY OF SUCH DAMAGE.
 <<<<<<< HEAD
-<<<<<<< HEAD
  */
 
 /**
@@ -60,8 +52,6 @@
  * Do not include this file directly. It gets included by contiki-conf
  * after all relevant directives have been set.
 =======
-=======
->>>>>>> OpenMote/master
  *
  * This file is part of the Contiki operating system.
  *
@@ -80,9 +70,6 @@
  *
  * \note   Do not include this file directly. It gets included by contiki-conf
  *         after all relevant directives have been set.
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
  */
 
@@ -111,11 +98,7 @@
 #undef LEDS_CONF_ALL
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 #define LEDS_RED       16  /**< LED1 (Red) -> PC4 */
-=======
-#define LEDS_RED       16  /**< LED1 (Red)    -> PC4 */
->>>>>>> OpenMote/master
 =======
 #define LEDS_RED       16  /**< LED1 (Red)    -> PC4 */
 >>>>>>> OpenMote/master
@@ -152,7 +135,6 @@
 #define UART0_RX_PORT            GPIO_A_NUM
 #define UART0_RX_PIN             0
 <<<<<<< HEAD
-<<<<<<< HEAD
 
 #define UART0_TX_PORT            GPIO_A_NUM
 #define UART0_TX_PIN             1
@@ -163,8 +145,6 @@
 #define UART1_RTS_PORT           GPIO_D_NUM
 #define UART1_RTS_PIN            3
 =======
-=======
->>>>>>> OpenMote/master
 #define UART0_TX_PORT            GPIO_A_NUM
 #define UART0_TX_PIN             1
 
@@ -176,9 +156,6 @@
 #define UART1_CTS_PIN            (-1)
 #define UART1_RTS_PORT           (-1)
 #define UART1_RTS_PIN            (-1)
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
 /** @} */
 /*---------------------------------------------------------------------------*/
@@ -198,21 +175,15 @@
 /*---------------------------------------------------------------------------*/
 /**
 <<<<<<< HEAD
-<<<<<<< HEAD
  * \name SPI configuration
  *
  * These values configure which CC2538 pins to use for the SPI lines.
 =======
-=======
->>>>>>> OpenMote/master
  * \name SPI (SSI0) configuration
  *
  * These values configure which CC2538 pins to use for the SPI (SSI0) lines.
  * The SSI0 is currently used to interface with the Ethernet driver (ENC28J60)
  * on the OpenBase board.
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
  * @{
  */
@@ -223,12 +194,9 @@
 #define SPI_MISO_PORT            GPIO_A_NUM
 #define SPI_MISO_PIN             4
 <<<<<<< HEAD
-<<<<<<< HEAD
 #define SPI_SEL_PORT             GPIO_A_NUM
 #define SPI_SEL_PIN              3
 =======
-=======
->>>>>>> OpenMote/master
 /** @} */
 /*---------------------------------------------------------------------------*/
 /**
@@ -244,9 +212,6 @@
 #define SPI1_TX_PIN              5
 #define SPI1_RX_PORT             GPIO_C_NUM
 #define SPI1_RX_PIN              6
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
 /** @} */
 /*---------------------------------------------------------------------------*/
@@ -271,16 +236,10 @@
 /*---------------------------------------------------------------------------*/
 #endif /* BOARD_H_ */
 <<<<<<< HEAD
-<<<<<<< HEAD
 /** @} */
 =======
-=======
->>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
 /**
  * @}
  */
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master

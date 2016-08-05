@@ -11,10 +11,7 @@
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
 <<<<<<< HEAD
-<<<<<<< HEAD
  *
-=======
->>>>>>> OpenMote/master
 =======
 >>>>>>> OpenMote/master
  * 3. Neither the name of the copyright holder nor the names of its
@@ -42,7 +39,6 @@
  * Project specific configuration defines for the basic RE-Mote examples
  */
 <<<<<<< HEAD
-<<<<<<< HEAD
 #ifndef PROJECT_CONF_H_
 #define PROJECT_CONF_H_
 
@@ -52,8 +48,6 @@
 #endif /* PROJECT_CONF_H_ */
 
 =======
-=======
->>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
 #ifndef PROJECT_CONF_H_
 #define PROJECT_CONF_H_
@@ -63,8 +57,5 @@
 /*---------------------------------------------------------------------------*/
 #endif /* PROJECT_CONF_H_ */
 /*---------------------------------------------------------------------------*/
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
 /** @} */

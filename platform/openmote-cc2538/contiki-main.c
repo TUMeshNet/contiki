@@ -1,10 +1,6 @@
 /*
 <<<<<<< HEAD
-<<<<<<< HEAD
  * Copyright (c) 2012, Texas Instruments Incorporated - http://www.ti.com/
-=======
- * Copyright (c) 2014, Texas Instruments Incorporated - http://www.ti.com/
->>>>>>> OpenMote/master
 =======
  * Copyright (c) 2014, Texas Instruments Incorporated - http://www.ti.com/
 >>>>>>> OpenMote/master
@@ -19,10 +15,7 @@
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
 <<<<<<< HEAD
-<<<<<<< HEAD
  *
-=======
->>>>>>> OpenMote/master
 =======
 >>>>>>> OpenMote/master
  * 3. Neither the name of the copyright holder nor the names of its
@@ -42,7 +35,6 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
  * OF THE POSSIBILITY OF SUCH DAMAGE.
 <<<<<<< HEAD
-<<<<<<< HEAD
  */
 /**
  * \addtogroup cc2538-platforms
@@ -50,8 +42,6 @@
  *
  * \defgroup openmote The OpenMote-CC2538 platform
 =======
-=======
->>>>>>> OpenMote/master
  *
  * This file is part of the Contiki operating system.
  *
@@ -62,9 +52,6 @@
  * @{
  *
  * \defgroup openmote-cc2538 OpenMote-CC2538 platform
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
  *
  * The OpenMote-CC2538 is based on the CC2538, the new platform by Texas Instruments
@@ -82,10 +69,6 @@
 #include "dev/nvic.h"
 #include "dev/uart.h"
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
-#include "dev/i2c.h"
->>>>>>> OpenMote/master
 =======
 #include "dev/i2c.h"
 >>>>>>> OpenMote/master
@@ -126,13 +109,7 @@
 #endif
 /*---------------------------------------------------------------------------*/
 <<<<<<< HEAD
-<<<<<<< HEAD
 /** \brief Board specific iniatialisation */
-=======
-/**
- * \brief Board specific iniatialisation
- */
->>>>>>> OpenMote/master
 =======
 /**
  * \brief Board specific iniatialisation
@@ -209,7 +186,6 @@ main(void)
   watchdog_init();
 
 <<<<<<< HEAD
-<<<<<<< HEAD
   /*
    * Character I/O Initialisation.
    * When the UART receives a character it will call serial_line_input_byte to
@@ -220,8 +196,6 @@ main(void)
    * received over the relevant peripheral will be handled by
    * slip_input_byte instead
    */
-=======
->>>>>>> OpenMote/master
 =======
 >>>>>>> OpenMote/master
 #if UART_CONF_ENABLE
@@ -236,11 +210,6 @@ main(void)
 #endif
 
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  i2c_init(I2C_SDA_PORT, I2C_SDA_PIN, I2C_SCL_PORT, I2C_SCL_PIN, I2C_SCL_NORMAL_BUS_SPEED);
-
->>>>>>> OpenMote/master
 =======
   i2c_init(I2C_SDA_PORT, I2C_SDA_PIN, I2C_SCL_PORT, I2C_SCL_PIN, I2C_SCL_NORMAL_BUS_SPEED);
 
@@ -254,10 +223,7 @@ main(void)
   PUTS(BOARD_STRING);
 
 <<<<<<< HEAD
-<<<<<<< HEAD
   /* Initialise the H/W RNG engine. */
-=======
->>>>>>> OpenMote/master
 =======
 >>>>>>> OpenMote/master
   random_init(0);
@@ -278,23 +244,17 @@ main(void)
   set_rf_params();
 
 <<<<<<< HEAD
-<<<<<<< HEAD
   PRINTF(" Net: ");
   PRINTF("%s\n", NETSTACK_NETWORK.name);
   PRINTF(" MAC: ");
   PRINTF("%s\n", NETSTACK_MAC.name);
   PRINTF(" RDC: ");
 =======
-=======
->>>>>>> OpenMote/master
   PRINTF("Net: ");
   PRINTF("%s\n", NETSTACK_NETWORK.name);
   PRINTF("MAC: ");
   PRINTF("%s\n", NETSTACK_MAC.name);
   PRINTF("RDC: ");
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
   PRINTF("%s\n", NETSTACK_RDC.name);
 
@@ -320,10 +280,7 @@ main(void)
     uint8_t r;
     do {
 <<<<<<< HEAD
-<<<<<<< HEAD
       /* Reset watchdog and handle polls and events */
-=======
->>>>>>> OpenMote/master
 =======
 >>>>>>> OpenMote/master
       watchdog_periodic();
@@ -332,10 +289,7 @@ main(void)
     } while(r > 0);
 
 <<<<<<< HEAD
-<<<<<<< HEAD
     /* We have serviced all pending events. Enter a Low-Power mode. */
-=======
->>>>>>> OpenMote/master
 =======
 >>>>>>> OpenMote/master
     lpm_enter();
@@ -343,10 +297,7 @@ main(void)
 }
 /*---------------------------------------------------------------------------*/
 <<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> OpenMote/master
 =======
 >>>>>>> OpenMote/master
 /**

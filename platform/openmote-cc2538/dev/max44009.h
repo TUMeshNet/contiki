@@ -30,7 +30,6 @@
  *
  */
 <<<<<<< HEAD
-<<<<<<< HEAD
 
 /**
  * \addtogroup platform
@@ -41,8 +40,6 @@
  * \file
  * Header for the MAX44009 light sensor in OpenMote-CC2538.
 =======
-=======
->>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
 /**
  * \addtogroup openmote-sensors
@@ -53,15 +50,11 @@
  *
  * \file
  * Header file for the MAX44009 light sensor driver
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
  *
  * \author
  * Pere Tuset <peretuset@openmote.com>
  */
-<<<<<<< HEAD
 <<<<<<< HEAD
 
 #ifndef __MAX44009_H__
@@ -76,8 +69,6 @@ float max44009_convert_light(uint16_t light);
 #endif /* ifndef __MAX44009_H__ */
 /** @} */
 =======
-=======
->>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
 #ifndef MAX44009_H_
 #define MAX44009_H_
@@ -100,7 +91,4 @@ extern const struct sensors_sensor max44009;
  * @}
  * @}
  */
-<<<<<<< HEAD
->>>>>>> OpenMote/master
-=======
 >>>>>>> OpenMote/master
