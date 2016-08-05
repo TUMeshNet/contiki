@@ -29,6 +29,7 @@
  * This file is part of the Contiki operating system.
  *
  */
+<<<<<<< HEAD
 
 /**
  * \addtogroup platform
@@ -38,10 +39,20 @@
  *
  * \file
  * Driver for the MAX44009 light sensor in OpenMote-CC2538.
+=======
+/*---------------------------------------------------------------------------*/
+/**
+ * \addtogroup openmote-max44009-sensor
+ * @{
+ *
+ * \file
+ * Driver for the MAX44009 light sensor
+>>>>>>> OpenMote/master
  *
  * \author
  * Pere Tuset <peretuset@openmote.com>
  */
+<<<<<<< HEAD
 
 /*---------------------------------------------------------------------------*/
 #include "dev/i2c.h"
@@ -52,6 +63,32 @@
 #define MAX44009_NOT_FOUND                  (0x00)
 
 /* REGISTER ADDRESSES */
+=======
+/*---------------------------------------------------------------------------*/
+#include "dev/i2c.h"
+#include "dev/max44009.h"
+#include "lib/sensors.h"
+/*---------------------------------------------------------------------------*/
+#define DEBUG 1
+#if DEBUG
+#define PRINTF(...) printf(__VA_ARGS__)
+#else
+#define PRINTF(...)
+#endif
+/*---------------------------------------------------------------------------*/
+/**
+ * \name MAX44009 address and device identifier
+ * @{
+ */
+#define MAX44009_ADDRESS                    (0x4A)
+#define MAX44009_NOT_FOUND                  (0x00)
+/** @} */
+/*---------------------------------------------------------------------------*/
+/**
+ * \name MAX44009 register addresses
+ * @{
+ */
+>>>>>>> OpenMote/master
 #define MAX44009_INT_STATUS_ADDR            (0x00)      /* R */
 #define MAX44009_INT_ENABLE_ADDR            (0x01)      /* R/W */
 #define MAX44009_CONFIG_ADDR                (0x02)      /* R/W */
@@ -60,14 +97,26 @@
 #define MAX44009_THR_HIGH_ADDR              (0x05)      /* R/W */
 #define MAX44009_THR_LOW_ADDR               (0x06)      /* R/W */
 #define MAX44009_THR_TIMER_ADDR             (0x07)      /* R/W */
+<<<<<<< HEAD
 
 /* INTERRUPT VALUES */
+=======
+/** @} */
+/*---------------------------------------------------------------------------*/
+/**
+ * \name MAX44009 register values
+ * @{
+ */
+>>>>>>> OpenMote/master
 #define MAX44009_INT_STATUS_OFF             (0x00)
 #define MAX44009_INT_STATUS_ON              (0x01)
 #define MAX44009_INT_DISABLED               (0x00)
 #define MAX44009_INT_ENABLED                (0x01)
 
+<<<<<<< HEAD
 /* CONFIGURATION VALUES */
+=======
+>>>>>>> OpenMote/master
 #define MAX44009_CONFIG_DEFAULT             (0 << 7)
 #define MAX44009_CONFIG_CONTINUOUS          (1 << 7)
 #define MAX44009_CONFIG_AUTO                (0 << 6)
@@ -83,16 +132,33 @@
 #define MAX44009_CONFIG_INTEGRATION_12ms    (6 << 0)
 #define MAX44009_CONFIG_INTEGRATION_6ms     (7 << 0)
 
+<<<<<<< HEAD
 /* DEFAULT CONFIGURATION */
+=======
+>>>>>>> OpenMote/master
 #define MAX44009_DEFAULT_CONFIGURATION      (MAX44009_CONFIG_DEFAULT | \
                                              MAX44009_CONFIG_AUTO | \
                                              MAX44009_CONFIG_CDR_NORMAL | \
                                              MAX44009_CONFIG_INTEGRATION_100ms)
+<<<<<<< HEAD
 /*---------------------------------------------------------------------------*/
 /**
  *
  */
 void
+=======
+
+#define MAX44009_USER_CONFIGURATION         (MAX44009_CONFIG_DEFAULT | \
+                                             MAX44009_CONFIG_AUTO | \
+                                             MAX44009_CONFIG_CDR_NORMAL | \
+                                             MAX44009_CONFIG_INTEGRATION_800ms)
+
+/** @} */
+/*---------------------------------------------------------------------------*/
+static uint8_t enabled;
+/*---------------------------------------------------------------------------*/
+static void
+>>>>>>> OpenMote/master
 max44009_init(void)
 {
   uint8_t max44009_address[5] = { MAX44009_INT_ENABLE_ADDR, MAX44009_CONFIG_ADDR, \
@@ -102,26 +168,41 @@ max44009_init(void)
   uint8_t max44009_data[2];
   uint8_t i;
 
+<<<<<<< HEAD
   max44009_value[0] = (MAX44009_INT_STATUS_ON);
   max44009_value[1] = (MAX44009_DEFAULT_CONFIGURATION);
+=======
+  max44009_value[0] = (MAX44009_INT_STATUS_OFF);
+  max44009_value[1] = (MAX44009_USER_CONFIGURATION);
+>>>>>>> OpenMote/master
   max44009_value[2] = (0xFF);
   max44009_value[3] = (0x00);
   max44009_value[4] = (0xFF);
 
+<<<<<<< HEAD
   i2c_init(I2C_SDA_PORT, I2C_SDA_PIN, I2C_SCL_PORT, I2C_SCL_PIN,
            I2C_SCL_NORMAL_BUS_SPEED);
 
   for(i = 0; i < sizeof(max44009_address); i++) {
     max44009_data[0] = max44009_value[i];
     max44009_data[1] = max44009_data[i];
+=======
+  for(i = 0; i < sizeof(max44009_address) / sizeof(max44009_address[0]); i++) {
+    max44009_data[0] = max44009_address[i];
+    max44009_data[1] = max44009_value[i];
+>>>>>>> OpenMote/master
     i2c_burst_send(MAX44009_ADDRESS, max44009_data, 2);
   }
 }
 /*---------------------------------------------------------------------------*/
+<<<<<<< HEAD
 /**
  *
  */
 void
+=======
+static void
+>>>>>>> OpenMote/master
 max44009_reset(void)
 {
   uint8_t max44009_address[5] = { MAX44009_INT_ENABLE_ADDR, MAX44009_CONFIG_ADDR, \
@@ -131,13 +212,20 @@ max44009_reset(void)
   uint8_t max44009_data[2];
   uint8_t i;
 
+<<<<<<< HEAD
   for(i = 0; i < sizeof(max44009_address); i++) {
     max44009_data[0] = max44009_value[i];
     max44009_data[1] = max44009_data[i];
+=======
+  for(i = 0; i < sizeof(max44009_address) / sizeof(max44009_address[0]); i++) {
+    max44009_data[0] = max44009_address[i];
+    max44009_data[1] = max44009_value[i];
+>>>>>>> OpenMote/master
     i2c_burst_send(MAX44009_ADDRESS, max44009_data, 2);
   }
 }
 /*---------------------------------------------------------------------------*/
+<<<<<<< HEAD
 /**
  *
  */
@@ -148,19 +236,40 @@ max44009_is_present(void)
 
   i2c_single_send(MAX44009_ADDRESS, MAX44009_CONFIG_ADDR);
   i2c_single_receive(MAX44009_ADDRESS, &is_present);
+=======
+static uint8_t
+max44009_is_present(void)
+{
+  uint8_t status;
+  uint8_t is_present;
+
+  i2c_single_send(MAX44009_ADDRESS, MAX44009_CONFIG_ADDR);
+  status = i2c_single_receive(MAX44009_ADDRESS, &is_present);
+  if(status != I2C_MASTER_ERR_NONE) {
+    return 0;
+  }
+>>>>>>> OpenMote/master
 
   return is_present != MAX44009_NOT_FOUND;
 }
 /*---------------------------------------------------------------------------*/
+<<<<<<< HEAD
 /**
  *
  */
 uint16_t
+=======
+static uint16_t
+>>>>>>> OpenMote/master
 max44009_read_light(void)
 {
   uint8_t exponent, mantissa;
   uint8_t max44009_data[2];
+<<<<<<< HEAD
   uint16_t result;
+=======
+  uint32_t result;
+>>>>>>> OpenMote/master
 
   i2c_single_send(MAX44009_ADDRESS, MAX44009_LUX_HIGH_ADDR);
   i2c_single_receive(MAX44009_ADDRESS, &max44009_data[0]);
@@ -175,6 +284,7 @@ max44009_read_light(void)
   return result;
 }
 /*---------------------------------------------------------------------------*/
+<<<<<<< HEAD
 /**
  *
  */
@@ -194,4 +304,79 @@ max44009_convert_light(uint16_t lux)
   return result;
 }
 /*---------------------------------------------------------------------------*/
+=======
+static uint16_t
+max44009_convert_light(uint16_t lux)
+{
+  uint8_t exponent, mantissa;
+  uint32_t result;
+
+  exponent = (lux >> 8) & 0xFF;
+  exponent = (exponent == 0x0F ? exponent & 0x0E : exponent);
+  mantissa = (lux >> 0) & 0xFF;
+
+  result = 45 * (2 ^ exponent * mantissa) / 10;
+
+  return (uint16_t)result;
+}
+/*---------------------------------------------------------------------------*/
+static int
+status(int type)
+{
+  switch(type) {
+  case SENSORS_ACTIVE:
+  case SENSORS_READY:
+    return enabled;
+  }
+  return 0;
+}
+/*---------------------------------------------------------------------------*/
+static int
+value(int type)
+{
+  uint16_t value;
+
+  if(!enabled) {
+    PRINTF("MAX44009: sensor not started\n");
+    return MAX44009_ERROR;
+  }
+
+  if(type == MAX44009_READ_RAW_LIGHT) {
+    return max44009_read_light();
+  } else if(type == MAX44009_READ_LIGHT) {
+    value = max44009_read_light();
+    return max44009_convert_light(value);
+  } else {
+    PRINTF("MAX44009: invalid value requested\n");
+    return MAX44009_ERROR;
+  }
+}
+/*---------------------------------------------------------------------------*/
+static int
+configure(int type, int value)
+{
+  if(type == MAX44009_ACTIVATE) {
+    if(!max44009_is_present()) {
+      return MAX44009_ERROR;
+    } else {
+      max44009_init();
+      enabled = 1;
+      return MAX44009_SUCCESS;
+    }
+  }
+
+  if((type == MAX44009_RESET) && enabled) {
+    max44009_reset();
+    return MAX44009_SUCCESS;
+  } else {
+    PRINTF("MAX44009: is not enabled\n");
+    return MAX44009_ERROR;
+  }
+
+  return MAX44009_ERROR;
+}
+/*---------------------------------------------------------------------------*/
+SENSORS_SENSOR(max44009, MAX44009_SENSOR, value, configure, status);
+/*---------------------------------------------------------------------------*/
+>>>>>>> OpenMote/master
 /** @} */

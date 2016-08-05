@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014, Thingsquare, http://www.thingsquare.com/.
+ * Copyright (c) 2012, Texas Instruments Incorporated - http://www.ti.com/
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -27,67 +27,33 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  *
-<<<<<<< HEAD
- */
-
-/**
- * \addtogroup platform
- * @{
- *
- * \defgroup openmote
- *
- * \file
- * Header for the antenna selection on the OpenMote-CC2538 platform.
- */
-
-#ifndef ANTENNA_H_
-#define ANTENNA_H_
-/*---------------------------------------------------------------------------*/
-void antenna_init(void);
-void antenna_internal(void);
-void antenna_external(void);
-/*---------------------------------------------------------------------------*/
-#endif /* ANTENNA_H_ */
-/** @} */
-=======
  * This file is part of the Contiki operating system.
  *
  */
-/*--------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*/
 /**
  * \addtogroup openmote-cc2538
  * @{
  *
- * \defgroup openmote-antenna OpenMote-CC2538 antenna switch
+ * \defgroup openmote-sensors OpenMote-CC2538 sensors
  *
- * Driver for the OpenMote-CC2538 antenna switch
+ * Generic module controlling sensors on the OpenMote-CC2538 platform
  * @{
  *
  * \file
- * Header for the OpenMote-CC2538 antenna switch
+ * Implementation of a generic module controlling OpenMote-CC2538 sensors
  */
 /*---------------------------------------------------------------------------*/
-#ifndef ANTENNA_H_
-#define ANTENNA_H_
+#ifndef OPENMOTE_SENSORS_H_
+#define OPENMOTE_SENSORS_H_
 /*---------------------------------------------------------------------------*/
-/**
- * \brief Initialize the antenna switch, by default it uses the external
- */
-void antenna_init(void);
+#include "lib/sensors.h"
+#include "dev/cc2538-sensors.h"
+#include "dev/button-sensor.h"
 /*---------------------------------------------------------------------------*/
-/**
- * \brief Select the external (connector) antenna
- */
-void antenna_internal(void);
+#endif /* OPENMOTE_SENSORS_H_ */
 /*---------------------------------------------------------------------------*/
-/**
- * \brief Select the internal (chip) antenna
- */
-void antenna_external(void);
-/*---------------------------------------------------------------------------*/
-#endif /* ANTENNA_H_ */
 /**
  * @}
  * @}
  */
->>>>>>> OpenMote/master

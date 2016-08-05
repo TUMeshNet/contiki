@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014, Thingsquare, http://www.thingsquare.com/.
+ * Copyright (c) 2012, Texas Instruments Incorporated - http://www.ti.com/
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -10,6 +10,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
+ *
  * 3. Neither the name of the copyright holder nor the names of its
  *    contributors may be used to endorse or promote products derived
  *    from this software without specific prior written permission.
@@ -27,67 +28,33 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  *
-<<<<<<< HEAD
- */
-
-/**
- * \addtogroup platform
- * @{
- *
- * \defgroup openmote
- *
- * \file
- * Header for the antenna selection on the OpenMote-CC2538 platform.
- */
-
-#ifndef ANTENNA_H_
-#define ANTENNA_H_
-/*---------------------------------------------------------------------------*/
-void antenna_init(void);
-void antenna_internal(void);
-void antenna_external(void);
-/*---------------------------------------------------------------------------*/
-#endif /* ANTENNA_H_ */
-/** @} */
-=======
  * This file is part of the Contiki operating system.
  *
  */
-/*--------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*/
 /**
- * \addtogroup openmote-cc2538
+ * \addtogroup openmote-sensors
  * @{
  *
- * \defgroup openmote-antenna OpenMote-CC2538 antenna switch
- *
- * Driver for the OpenMote-CC2538 antenna switch
+ * Generic module controlling sensors on the OpenMote-CC2538 platform
  * @{
  *
  * \file
- * Header for the OpenMote-CC2538 antenna switch
+ * Implementation of a generic module controlling OpenMote-CC2538 sensors
  */
 /*---------------------------------------------------------------------------*/
-#ifndef ANTENNA_H_
-#define ANTENNA_H_
+#include "contiki.h"
+#include "dev/cc2538-sensors.h"
+#include "dev/button-sensor.h"
+
+#include <string.h>
 /*---------------------------------------------------------------------------*/
 /**
- * \brief Initialize the antenna switch, by default it uses the external
+ * \brief Exports a global symbol to be used by the sensor API
  */
-void antenna_init(void);
+SENSORS(&button_sensor, &cc2538_temp_sensor);
 /*---------------------------------------------------------------------------*/
-/**
- * \brief Select the external (connector) antenna
- */
-void antenna_internal(void);
-/*---------------------------------------------------------------------------*/
-/**
- * \brief Select the internal (chip) antenna
- */
-void antenna_external(void);
-/*---------------------------------------------------------------------------*/
-#endif /* ANTENNA_H_ */
 /**
  * @}
  * @}
  */
->>>>>>> OpenMote/master

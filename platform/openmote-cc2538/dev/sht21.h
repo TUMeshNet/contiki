@@ -29,6 +29,7 @@
  * This file is part of the Contiki operating system.
  *
  */
+<<<<<<< HEAD
 
 /**
  * \addtogroup platform
@@ -38,10 +39,23 @@
  *
  * \file
  * Header for the SHT21 temperature and humidity sensor in OpenMote-CC2538.
+=======
+/*---------------------------------------------------------------------------*/
+/**
+ * \addtogroup openmote-sensors
+ * @{
+ *
+ * \defgroup openmote-sht21-sensor SHT21 sensor
+ * @{
+ *
+ * \file
+ * Header file for the SHT21 temperature and humidity sensor driver
+>>>>>>> OpenMote/master
  *
  * \author
  * Pere Tuset <peretuset@openmote.com>
  */
+<<<<<<< HEAD
 
 #ifndef __SHT21_H__
 #define __SHT21_H__
@@ -56,3 +70,29 @@ float sht21_convert_humidity(uint16_t humidity);
 /*---------------------------------------------------------------------------*/
 #endif /* ifndef __SHT21_H__ */
 /** @} */
+=======
+/*---------------------------------------------------------------------------*/
+#ifndef SHT21_H_
+#define SHT21_H_
+/*---------------------------------------------------------------------------*/
+#define SHT21_ERROR             (-1)
+#define SHT21_SUCCESS           (0)
+#define SHT21_ACTIVATE          (SENSORS_ACTIVE)
+#define SHT21_READ_RAW_TEMP     (2)
+#define SHT21_READ_RAW_RHUM     (3)
+#define SHT21_READ_TEMP         (4)
+#define SHT21_READ_RHUM         (5)
+#define SHT21_RESET             (6)
+#define SHT21_NONE              (7)
+/*---------------------------------------------------------------------------*/
+#define SHT21_SENSOR "SHT21 Sensor"
+/*---------------------------------------------------------------------------*/
+extern const struct sensors_sensor sht21;
+/*---------------------------------------------------------------------------*/
+#endif /* SHT21_H_ */
+/*---------------------------------------------------------------------------*/
+/**
+ * @}
+ * @}
+ */
+>>>>>>> OpenMote/master
