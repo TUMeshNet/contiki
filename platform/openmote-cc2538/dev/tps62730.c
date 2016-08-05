@@ -29,7 +29,6 @@
  * This file is part of the Contiki operating system.
  *
  */
-<<<<<<< HEAD
 
 /**
  * \addtogroup platform
@@ -39,28 +38,11 @@
  *
  * \file
  * Driver for the TPS62730 voltage regulator on the OpenMote-CC2538.
-=======
-/*---------------------------------------------------------------------------*/
-/**
- * \addtogroup openmote-tps62730
- * @{
- *
- * Driver for the TPS62730 voltage regulator, to enable power from
- * the battery voltage (bypass, Vout=Vin, Iq < 1uA) or through the
- * buck regulator (on, Vout=2.1V, Iq = 30uA)
- * @{
- *
- * \file
- * Driver for the TPS62730 voltage regulator
->>>>>>> OpenMote/master
  *
  * \author
  * Pere Tuset <peretuset@openmote.com>
  */
-<<<<<<< HEAD
 
-=======
->>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
 #include "contiki-conf.h"
 #include "dev/gpio.h"
@@ -82,13 +64,10 @@ gpio_reset(int port, int bit)
   REG((port | GPIO_DATA) + (bit << 2)) = 0;
 }
 /*---------------------------------------------------------------------------*/
-<<<<<<< HEAD
 /**
  * Initializes the TPS62730 voltage regulator
  * By default it is in bypass mode, Vout = Vin, Iq < 1 uA
  */
-=======
->>>>>>> OpenMote/master
 void
 tps62730_init(void)
 {
@@ -98,35 +77,22 @@ tps62730_init(void)
   tps62730_bypass();
 }
 /*---------------------------------------------------------------------------*/
-<<<<<<< HEAD
 /**
  * Enables the TPS62730, Vout = 2.2V, Iq = 30 uA
  */
-=======
->>>>>>> OpenMote/master
 void
 tps62730_on(void)
 {
   gpio_set(BSP_TPS62730_BASE, BSP_TPS62730_ON);
 }
 /*---------------------------------------------------------------------------*/
-<<<<<<< HEAD
 /**
  * Disables the TPS62730, Vout = Vin, Iq < 1 uA
  */
-=======
->>>>>>> OpenMote/master
 void
 tps62730_bypass(void)
 {
   gpio_reset(BSP_TPS62730_BASE, BSP_TPS62730_ON);
 }
 /*---------------------------------------------------------------------------*/
-<<<<<<< HEAD
 /** @} */
-=======
-/**
- * @}
- * @}
- */
->>>>>>> OpenMote/master

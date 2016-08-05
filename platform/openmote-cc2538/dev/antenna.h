@@ -27,7 +27,6 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  *
-<<<<<<< HEAD
  */
 
 /**
@@ -49,45 +48,3 @@ void antenna_external(void);
 /*---------------------------------------------------------------------------*/
 #endif /* ANTENNA_H_ */
 /** @} */
-=======
- * This file is part of the Contiki operating system.
- *
- */
-/*--------------------------------------------------------------------------*/
-/**
- * \addtogroup openmote-cc2538
- * @{
- *
- * \defgroup openmote-antenna OpenMote-CC2538 antenna switch
- *
- * Driver for the OpenMote-CC2538 antenna switch
- * @{
- *
- * \file
- * Header for the OpenMote-CC2538 antenna switch
- */
-/*---------------------------------------------------------------------------*/
-#ifndef ANTENNA_H_
-#define ANTENNA_H_
-/*---------------------------------------------------------------------------*/
-/**
- * \brief Initialize the antenna switch, by default it uses the external
- */
-void antenna_init(void);
-/*---------------------------------------------------------------------------*/
-/**
- * \brief Select the external (connector) antenna
- */
-void antenna_internal(void);
-/*---------------------------------------------------------------------------*/
-/**
- * \brief Select the internal (chip) antenna
- */
-void antenna_external(void);
-/*---------------------------------------------------------------------------*/
-#endif /* ANTENNA_H_ */
-/**
- * @}
- * @}
- */
->>>>>>> OpenMote/master

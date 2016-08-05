@@ -29,7 +29,6 @@
  * This file is part of the Contiki operating system.
  *
  */
-<<<<<<< HEAD
 
 /**
  * \addtogroup platform
@@ -39,23 +38,10 @@
  *
  * \file
  * Header for the ADXL346 acceleration sensor in OpenMote-CC2538.
-=======
-/*---------------------------------------------------------------------------*/
-/**
- * \addtogroup openmote-sensors
- * @{
- *
- * \defgroup openmote-adxl346-sensor ADXL346 acceleration sensor
- * @{
- *
- * \file
- * ADXL346 acceleration sensor driver header file
->>>>>>> OpenMote/master
  *
  * \author
  * Pere Tuset <peretuset@openmote.com>
  */
-<<<<<<< HEAD
 
 #ifndef __ADXL346_H__
 #define __ADXL346_H__
@@ -69,31 +55,3 @@ uint16_t adxl346_read_z(void);
 /*---------------------------------------------------------------------------*/
 #endif /* ifndef __ADXL346_H__ */
 /** @} */
-=======
-/*---------------------------------------------------------------------------*/
-#ifndef ADXL346_H_
-#define ADXL346_H_
-/*---------------------------------------------------------------------------*/
-#define ADXL346_ERROR             (-1)
-#define ADXL346_SUCCESS           (0)
-#define ADXL346_ACTIVATE          (SENSORS_ACTIVE)
-#define ADXL346_READ_X            (2)
-#define ADXL346_READ_X_mG         (3)
-#define ADXL346_READ_Y            (4)
-#define ADXL346_READ_Y_mG         (5)
-#define ADXL346_READ_Z            (6)
-#define ADXL346_READ_Z_mG         (7)
-#define ADXL346_CALIB_OFFSET      (8)
-#define ADXL346_NONE              (9)
-/*---------------------------------------------------------------------------*/
-#define ADXL346_SENSOR "ADXL346 Sensor"
-/*---------------------------------------------------------------------------*/
-extern const struct sensors_sensor adxl346;
-/*---------------------------------------------------------------------------*/
-#endif /* ADXL346_H_ */
-/*---------------------------------------------------------------------------*/
-/**
- * @}
- * @}
- */
->>>>>>> OpenMote/master
