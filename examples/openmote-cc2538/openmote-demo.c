@@ -30,7 +30,11 @@
  *
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+/*---------------------------------------------------------------------------*/
+>>>>>>> OpenMote/master
 =======
 /*---------------------------------------------------------------------------*/
 >>>>>>> OpenMote/master
@@ -41,6 +45,7 @@
  * \defgroup openmote-examples OpenMote-CC2538 Example Projects
  * @{
  *
+<<<<<<< HEAD
 <<<<<<< HEAD
  * \defgroup openmote-demo OpenMote-CC2538 Demo Project
  *
@@ -61,10 +66,14 @@
 =======
  * Example project demonstrating the OpenMote-CC2538 functionality
 >>>>>>> OpenMote/master
+=======
+ * Example project demonstrating the OpenMote-CC2538 functionality
+>>>>>>> OpenMote/master
  *
  * @{
  *
  * \file
+<<<<<<< HEAD
 <<<<<<< HEAD
  *     Example demonstrating the OpenMote platform.
  * \author
@@ -79,6 +88,8 @@
 #include "dev/button-sensor.h"
 #include "dev/watchdog.h"
 =======
+=======
+>>>>>>> OpenMote/master
  * Example demonstrating the OpenMote-CC2538 platform
  * \author
  * Pere Tuset <peretuset@openmote.com>
@@ -90,11 +101,15 @@
 #include "dev/leds.h"
 #include "dev/uart.h"
 #include "dev/button-sensor.h"
+<<<<<<< HEAD
+>>>>>>> OpenMote/master
+=======
 >>>>>>> OpenMote/master
 #include "dev/serial-line.h"
 #include "dev/sys-ctrl.h"
 #include "net/rime/broadcast.h"
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #include <stdio.h>
 #include <stdint.h>
@@ -113,6 +128,8 @@ static struct rtimer rt;
 static uint16_t counter;
 /*---------------------------------------------------------------------------*/
 =======
+=======
+>>>>>>> OpenMote/master
 #include "dev/adxl346.h"
 #include "dev/max44009.h"
 #include "dev/sht21.h"
@@ -122,6 +139,9 @@ static uint16_t counter;
 /*---------------------------------------------------------------------------*/
 #define BROADCAST_CHANNEL   129
 /*---------------------------------------------------------------------------*/
+<<<<<<< HEAD
+>>>>>>> OpenMote/master
+=======
 >>>>>>> OpenMote/master
 PROCESS(openmote_demo_process, "OpenMote-CC2538 demo process");
 AUTOSTART_PROCESSES(&openmote_demo_process);
@@ -130,8 +150,13 @@ static void
 broadcast_recv(struct broadcast_conn *c, const linkaddr_t *from)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   leds_toggle(LEDS_RED);
   printf("Received %u bytes: '0x%04x'\n\r", packetbuf_datalen(),
+=======
+  leds_toggle(LEDS_GREEN);
+  printf("Received %u bytes: '0x%04x'\n", packetbuf_datalen(),
+>>>>>>> OpenMote/master
 =======
   leds_toggle(LEDS_GREEN);
   printf("Received %u bytes: '0x%04x'\n", packetbuf_datalen(),
@@ -143,6 +168,7 @@ static const struct broadcast_callbacks bc_rx = { broadcast_recv };
 static struct broadcast_conn bc;
 /*---------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 void
 rt_callback(struct rtimer *t, void *ptr)
 {
@@ -152,12 +178,17 @@ rt_callback(struct rtimer *t, void *ptr)
 PROCESS_THREAD(openmote_demo_process, ev, data)
 {
 =======
+=======
+>>>>>>> OpenMote/master
 PROCESS_THREAD(openmote_demo_process, ev, data)
 {
   static struct etimer et;
   static int16_t counter;
   static uint16_t adxl346_present, sht21_present, max44009_present;
   static int16_t accel, light, temperature, humidity;
+<<<<<<< HEAD
+>>>>>>> OpenMote/master
+=======
 >>>>>>> OpenMote/master
 
   PROCESS_EXITHANDLER(broadcast_close(&bc))
@@ -165,10 +196,13 @@ PROCESS_THREAD(openmote_demo_process, ev, data)
   PROCESS_BEGIN();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   counter = 0;
   broadcast_open(&bc, BROADCAST_CHANNEL, &bc_rx);
 
 =======
+=======
+>>>>>>> OpenMote/master
   /* Initialize and calibrate the ADXL346 sensor */
   adxl346_present = SENSORS_ACTIVATE(adxl346);
   if(adxl346_present == ADXL346_ERROR) {
@@ -197,6 +231,9 @@ PROCESS_THREAD(openmote_demo_process, ev, data)
 
   printf("****************************************\n");
 
+<<<<<<< HEAD
+>>>>>>> OpenMote/master
+=======
 >>>>>>> OpenMote/master
   while(1) {
     etimer_set(&et, CLOCK_SECOND);
@@ -204,6 +241,7 @@ PROCESS_THREAD(openmote_demo_process, ev, data)
     PROCESS_YIELD();
 
     if(ev == PROCESS_EVENT_TIMER) {
+<<<<<<< HEAD
 <<<<<<< HEAD
       leds_on(LEDS_PERIODIC);
       printf("Counter = 0x%08x\r\n", counter);
@@ -221,6 +259,8 @@ PROCESS_THREAD(openmote_demo_process, ev, data)
     }
     counter++;
 =======
+=======
+>>>>>>> OpenMote/master
       if(adxl346_present != ADXL346_ERROR) {
         leds_on(LEDS_YELLOW);
         accel = adxl346.value(ADXL346_READ_X_mG);
@@ -261,6 +301,9 @@ PROCESS_THREAD(openmote_demo_process, ev, data)
         }
       }
     }
+<<<<<<< HEAD
+>>>>>>> OpenMote/master
+=======
 >>>>>>> OpenMote/master
   }
 

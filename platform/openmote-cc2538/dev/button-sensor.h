@@ -28,6 +28,7 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
  * OF THE POSSIBILITY OF SUCH DAMAGE.
 <<<<<<< HEAD
+<<<<<<< HEAD
  */
 
 /**
@@ -42,6 +43,8 @@
  */
 
 =======
+=======
+>>>>>>> OpenMote/master
  *
  * This file is part of the Contiki operating system.
  *
@@ -62,11 +65,15 @@
  * Header for the OpenMote-CC2538 button driver
  */
 /*---------------------------------------------------------------------------*/
+<<<<<<< HEAD
+>>>>>>> OpenMote/master
+=======
 >>>>>>> OpenMote/master
 #ifndef BUTTON_SENSOR_H_
 #define BUTTON_SENSOR_H_
 /*---------------------------------------------------------------------------*/
 #include "lib/sensors.h"
+<<<<<<< HEAD
 <<<<<<< HEAD
 #include "dev/gpio.h"
 /*---------------------------------------------------------------------------*/
@@ -82,6 +89,8 @@ void button_sensor_init();
 /*---------------------------------------------------------------------------*/
 /** @} */
 =======
+=======
+>>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
 #define BUTTON_SENSOR "Button"
 
@@ -103,4 +112,7 @@ extern process_event_t button_press_duration_exceeded;
  * @}
  * @}
  */
+<<<<<<< HEAD
+>>>>>>> OpenMote/master
+=======
 >>>>>>> OpenMote/master

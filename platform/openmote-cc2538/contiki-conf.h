@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /**
  * \addtogroup openmote
  * @{
@@ -6,6 +7,8 @@
  * \file
  *  Configuration for the OpenMote-CC2538 platform.
 =======
+=======
+>>>>>>> OpenMote/master
 /*
  * Copyright (c) 2014, OpenMote Technologies, S.L.
  * All rights reserved.
@@ -51,6 +54,9 @@
  *
  * \file
  *  Configuration for the OpenMote-CC2538 platform
+<<<<<<< HEAD
+>>>>>>> OpenMote/master
+=======
 >>>>>>> OpenMote/master
  */
 #ifndef CONTIKI_CONF_H_
@@ -97,7 +103,11 @@ typedef uint32_t rtimer_clock_t;
 #define FLASH_CCA_CONF_BOOTLDR_BACKDOOR 1 /**<Enable the boot loader backdoor */
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> OpenMote/master
 =======
 
 >>>>>>> OpenMote/master
@@ -117,7 +127,13 @@ typedef uint32_t rtimer_clock_t;
  * @{
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define COFFEE_CONF_SIZE            (4 * COFFEE_SECTOR_SIZE)
+=======
+#ifndef COFFEE_CONF_SIZE
+#define COFFEE_CONF_SIZE            (4 * COFFEE_SECTOR_SIZE)
+#endif
+>>>>>>> OpenMote/master
 =======
 #ifndef COFFEE_CONF_SIZE
 #define COFFEE_CONF_SIZE            (4 * COFFEE_SECTOR_SIZE)
@@ -323,6 +339,7 @@ typedef uint32_t rtimer_clock_t;
 
 #define UART_IN_USE(u) ( \
 <<<<<<< HEAD
+<<<<<<< HEAD
   UART_CONF_ENABLE && \
   (UART_IN_USE_BY_SERIAL_LINE(u) || \
    UART_IN_USE_BY_SLIP(u) || \
@@ -331,6 +348,8 @@ typedef uint32_t rtimer_clock_t;
    UART_IN_USE_BY_UART1(u)) \
 )
 =======
+=======
+>>>>>>> OpenMote/master
     UART_CONF_ENABLE && \
     (UART_IN_USE_BY_SERIAL_LINE(u) || \
      UART_IN_USE_BY_SLIP(u) || \
@@ -338,6 +357,9 @@ typedef uint32_t rtimer_clock_t;
      UART_IN_USE_BY_DBG(u) || \
      UART_IN_USE_BY_UART1(u)) \
     )
+<<<<<<< HEAD
+>>>>>>> OpenMote/master
+=======
 >>>>>>> OpenMote/master
 /** @} */
 /*---------------------------------------------------------------------------*/
@@ -553,8 +575,13 @@ typedef uint32_t rtimer_clock_t;
 #ifndef SICSLOWPAN_CONF_ADDR_CONTEXT_0
 #define SICSLOWPAN_CONF_ADDR_CONTEXT_0 { \
 <<<<<<< HEAD
+<<<<<<< HEAD
   addr_contexts[0].prefix[0] = 0xaa; \
   addr_contexts[0].prefix[1] = 0xaa; \
+=======
+  addr_contexts[0].prefix[0] = UIP_DS6_DEFAULT_PREFIX_0; \
+  addr_contexts[0].prefix[1] = UIP_DS6_DEFAULT_PREFIX_1; \
+>>>>>>> OpenMote/master
 =======
   addr_contexts[0].prefix[0] = UIP_DS6_DEFAULT_PREFIX_0; \
   addr_contexts[0].prefix[1] = UIP_DS6_DEFAULT_PREFIX_1; \
@@ -602,6 +629,7 @@ typedef uint32_t rtimer_clock_t;
 #define CCM_STAR_CONF           cc2538_ccm_star_driver /**< AES-CCM* driver */
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 /** @} */
 /*---------------------------------------------------------------------------*/
 
@@ -609,6 +637,8 @@ typedef uint32_t rtimer_clock_t;
 
 /** @} */
 =======
+=======
+>>>>>>> OpenMote/master
 
 /*---------------------------------------------------------------------------*/
 #endif /* CONTIKI_CONF_H_ */
@@ -617,4 +647,7 @@ typedef uint32_t rtimer_clock_t;
  * @}
  * @}
  */
+<<<<<<< HEAD
+>>>>>>> OpenMote/master
+=======
 >>>>>>> OpenMote/master

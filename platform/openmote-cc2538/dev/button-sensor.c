@@ -28,6 +28,7 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
  * OF THE POSSIBILITY OF SUCH DAMAGE.
 <<<<<<< HEAD
+<<<<<<< HEAD
  */
 
 /**
@@ -42,6 +43,8 @@
  */
 
 =======
+=======
+>>>>>>> OpenMote/master
  *
  * This file is part of the Contiki operating system.
  *
@@ -54,6 +57,9 @@
  * \file
  * Driver for for the OpenMote-CC2538 user button
  */
+<<<<<<< HEAD
+>>>>>>> OpenMote/master
+=======
 >>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
 #include "contiki.h"
@@ -63,6 +69,11 @@
 #include "dev/button-sensor.h"
 #include "sys/timer.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#include "sys/ctimer.h"
+#include "sys/process.h"
+>>>>>>> OpenMote/master
 =======
 #include "sys/ctimer.h"
 #include "sys/process.h"
@@ -74,6 +85,7 @@
 #define BUTTON_USER_PORT_BASE  GPIO_PORT_TO_BASE(BUTTON_USER_PORT)
 #define BUTTON_USER_PIN_MASK   GPIO_PIN_MASK(BUTTON_USER_PIN)
 /*---------------------------------------------------------------------------*/
+<<<<<<< HEAD
 <<<<<<< HEAD
 static struct timer debouncetimer;
 /*---------------------------------------------------------------------------*/
@@ -102,6 +114,8 @@ config(uint32_t port_base, uint32_t pin_mask)
 
   GPIO_ENABLE_INTERRUPT(port_base, pin_mask);
 =======
+=======
+>>>>>>> OpenMote/master
 #define DEBOUNCE_DURATION (CLOCK_SECOND >> 4)
 
 static struct timer debouncetimer;
@@ -140,6 +154,9 @@ value(int type)
   }
 
   return 0;
+<<<<<<< HEAD
+>>>>>>> OpenMote/master
+=======
 >>>>>>> OpenMote/master
 }
 /*---------------------------------------------------------------------------*/
@@ -156,6 +173,7 @@ btn_callback(uint8_t port, uint8_t pin)
   if(!timer_expired(&debouncetimer)) {
     return;
   }
+<<<<<<< HEAD
 <<<<<<< HEAD
   timer_set(&debouncetimer, CLOCK_SECOND / 8);
   if(port == GPIO_C_NUM) {
@@ -174,6 +192,8 @@ btn_callback(uint8_t port, uint8_t pin)
  * \param value ignored
  * \return ignored
 =======
+=======
+>>>>>>> OpenMote/master
 
   timer_set(&debouncetimer, DEBOUNCE_DURATION);
 
@@ -197,11 +217,15 @@ btn_callback(uint8_t port, uint8_t pin)
  *
  * \param value Depends on the value of the type argument
  * \return Depends on the value of the type argument
+<<<<<<< HEAD
+>>>>>>> OpenMote/master
+=======
 >>>>>>> OpenMote/master
  */
 static int
 config_user(int type, int value)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
   config(BUTTON_USER_PORT_BASE, BUTTON_USER_PIN_MASK);
 
@@ -221,6 +245,8 @@ button_sensor_init()
 /*---------------------------------------------------------------------------*/
 SENSORS_SENSOR(button_user_sensor, BUTTON_SENSOR, NULL, config_user, NULL);
 =======
+=======
+>>>>>>> OpenMote/master
   switch(type) {
   case SENSORS_HW_INIT:
     button_press_duration_exceeded = process_alloc_event();
@@ -261,6 +287,9 @@ SENSORS_SENSOR(button_user_sensor, BUTTON_SENSOR, NULL, config_user, NULL);
 }
 /*---------------------------------------------------------------------------*/
 SENSORS_SENSOR(button_sensor, BUTTON_SENSOR, value, config_user, NULL);
+<<<<<<< HEAD
+>>>>>>> OpenMote/master
+=======
 >>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
 /** @} */

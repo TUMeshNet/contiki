@@ -30,6 +30,7 @@
  *
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /**
  * \addtogroup platform
@@ -40,6 +41,8 @@
  * \file
  * Header for the ADXL346 acceleration sensor in OpenMote-CC2538.
 =======
+=======
+>>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
 /**
  * \addtogroup openmote-sensors
@@ -50,11 +53,15 @@
  *
  * \file
  * ADXL346 acceleration sensor driver header file
+<<<<<<< HEAD
+>>>>>>> OpenMote/master
+=======
 >>>>>>> OpenMote/master
  *
  * \author
  * Pere Tuset <peretuset@openmote.com>
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 #ifndef __ADXL346_H__
@@ -70,6 +77,8 @@ uint16_t adxl346_read_z(void);
 #endif /* ifndef __ADXL346_H__ */
 /** @} */
 =======
+=======
+>>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
 #ifndef ADXL346_H_
 #define ADXL346_H_
@@ -96,4 +105,7 @@ extern const struct sensors_sensor adxl346;
  * @}
  * @}
  */
+<<<<<<< HEAD
+>>>>>>> OpenMote/master
+=======
 >>>>>>> OpenMote/master

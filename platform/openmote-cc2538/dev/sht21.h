@@ -30,6 +30,7 @@
  *
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /**
  * \addtogroup platform
@@ -40,6 +41,8 @@
  * \file
  * Header for the SHT21 temperature and humidity sensor in OpenMote-CC2538.
 =======
+=======
+>>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
 /**
  * \addtogroup openmote-sensors
@@ -50,11 +53,15 @@
  *
  * \file
  * Header file for the SHT21 temperature and humidity sensor driver
+<<<<<<< HEAD
+>>>>>>> OpenMote/master
+=======
 >>>>>>> OpenMote/master
  *
  * \author
  * Pere Tuset <peretuset@openmote.com>
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 #ifndef __SHT21_H__
@@ -71,6 +78,8 @@ float sht21_convert_humidity(uint16_t humidity);
 #endif /* ifndef __SHT21_H__ */
 /** @} */
 =======
+=======
+>>>>>>> OpenMote/master
 /*---------------------------------------------------------------------------*/
 #ifndef SHT21_H_
 #define SHT21_H_
@@ -95,4 +104,7 @@ extern const struct sensors_sensor sht21;
  * @}
  * @}
  */
+<<<<<<< HEAD
+>>>>>>> OpenMote/master
+=======
 >>>>>>> OpenMote/master
