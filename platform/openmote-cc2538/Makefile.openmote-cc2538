@@ -31,7 +31,7 @@ MODULES += core/net core/net/mac \
            core/net/llsec core/net/llsec/noncoresec
 
 PYTHON = python
-BSL_FLAGS += -e -w --bootloader-invert-lines -b 115200 -v
+BSL_FLAGS += -e -w --bootloader-active-high -b 115200 -v
 
 ifdef PORT
   BSL_FLAGS += -p $(PORT)

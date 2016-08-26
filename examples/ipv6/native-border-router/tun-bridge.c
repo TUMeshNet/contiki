@@ -46,7 +46,7 @@
 #include <errno.h>
 #include <fcntl.h>
 #include <signal.h>
-#include <termios.h>
+#include </usr/local/gcc_arm/gcc-arm-none-eabi-5_3-2016q1/arm-none-eabi/include/termios.h>
 #include <sys/ioctl.h>
 #include <sys/socket.h>
 
